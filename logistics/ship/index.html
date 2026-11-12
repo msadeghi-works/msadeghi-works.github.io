@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ثبت درخواست ارسال | رهسپار</title>
+<meta name="description" content="رهسپار؛ ارسال بار و بسته به ۱۹ شهر ایران با محاسبه‌ی آنلاین هزینه و رهگیری لحظه‌ای مرسوله.">
+<meta name="theme-color" content="#0f1b2d">
+<link rel="preload" href="../static/freight/fonts/vazirmatn.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/logistics/static/freight/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1b2d'/%3E%3Cpath d='M9 24 17 8h4l-8 16z' fill='%23f5a524'/%3E%3C/svg%3E">
+</head>
+<body class="">
+<a class="skip" href="index.html#main">رفتن به محتوای اصلی</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="../index.html" aria-label="رهسپار، صفحه‌ی اصلی">
+      <svg viewBox="0 0 44 44" width="40" height="40" aria-hidden="true"><rect width="44" height="44" rx="10" fill="#f5a524"/><path d="M12 34 22 10h6L18 34z" fill="#0f1b2d"/><path d="M27 22h6M25 28h8" stroke="#0f1b2d" stroke-width="3" stroke-linecap="round"/></svg>
+      <span class="logo-t"><b>رهسپار</b><small>حمل‌ونقل و پست اکسپرس</small></span>
+    </a>
+    <button class="nav-btn" type="button" aria-expanded="false" aria-controls="nav"><svg class="ic " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+<span class="sr">منو</span></button>
+    <nav id="nav" class="nav" aria-label="منوی اصلی">
+      
+      <a href="../services/index.html" >خدمات</a>
+      <a href="../coverage/index.html" >شبکه‌ی پوشش</a>
+      <a href="../calculator/index.html" >محاسبه‌ی هزینه</a>
+      <a href="../track/index.html" >رهگیری</a>
+      <a href="../contact/index.html" >قرارداد سازمانی</a>
+      
+      <a class="btn btn-amber nav-cta" href="index.html">ثبت ارسال</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead"><div class="wrap"><p class="kicker">ثبت ارسال</p><h1>درخواست ارسال بار یا بسته</h1><p class="lead">بعد از ثبت، کد رهگیری را همین‌جا می‌گیرید و کارشناس جمع‌آوری برای هماهنگی تماس می‌گیرد.</p></div><div class="road" aria-hidden="true"></div></section>
+
+<section class="sec">
+  <form method="post" class="wrap ship panel" novalidate>
+    <input type="hidden" name="csrfmiddlewaretoken" value="977pfHQ7xhnehJuTrG9JBvcC1jEfOMDDW21KJDzvKjs9MUIrcbdM4YLrWUAL10E2">
+    
+    
+    <fieldset><legend><span class="num">۱</span> بار و مسیر</legend>
+      <div class="grid2">
+        <label class="fld span2"><span>سرویس <i aria-hidden="true">*</i></span><select name="service" required id="id_service">
+  <option value="" selected>- Select an option -</option>
+
+  <option value="1">پست اکسپرس</option>
+
+  <option value="2">اکسپرس ویژه</option>
+
+  <option value="3">بار خرده (گروپاژ)</option>
+
+  <option value="4">بار کامل (دربستی)</option>
+
+</select></label>
+
+        <label class="fld"><span>مبدأ <i aria-hidden="true">*</i></span><select name="origin" required id="id_origin">
+  <option value="" selected>- Select an option -</option>
+
+  <option value="1">تهران</option>
+
+  <option value="2">کرج</option>
+
+  <option value="3">قم</option>
+
+  <option value="4">اصفهان</option>
+
+  <option value="5">یزد</option>
+
+  <option value="6">رشت</option>
+
+  <option value="7">ساری</option>
+
+  <option value="8">گرگان</option>
+
+  <option value="9">مشهد</option>
+
+  <option value="10">کرمان</option>
+
+  <option value="11">زاهدان</option>
+
+  <option value="12">تبریز</option>
+
+  <option value="13">ارومیه</option>
+
+  <option value="14">کرمانشاه</option>
+
+  <option value="15">همدان</option>
+
+  <option value="16">شیراز</option>
+
+  <option value="17">اهواز</option>
+
+  <option value="18">بوشهر</option>
+
+  <option value="19">بندرعباس</option>
+
+</select></label>
+
+        <label class="fld"><span>مقصد <i aria-hidden="true">*</i></span><select name="destination" required id="id_destination">
+  <option value="" selected>- Select an option -</option>
+
+  <option value="1">تهران</option>
+
+  <option value="2">کرج</option>
+
+  <option value="3">قم</option>
+
+  <option value="4">اصفهان</option>
+
+  <option value="5">یزد</option>
+
+  <option value="6">رشت</option>
+
+  <option value="7">ساری</option>
+
+  <option value="8">گرگان</option>
+
+  <option value="9">مشهد</option>
+
+  <option value="10">کرمان</option>
+
+  <option value="11">زاهدان</option>
+
+  <option value="12">تبریز</option>
+
+  <option value="13">ارومیه</option>
+
+  <option value="14">کرمانشاه</option>
+
+  <option value="15">همدان</option>
+
+  <option value="16">شیراز</option>
+
+  <option value="17">اهواز</option>
+
+  <option value="18">بوشهر</option>
+
+  <option value="19">بندرعباس</option>
+
+</select></label>
+
+      </div>
+      <div class="grid4">
+        <label class="fld"><span>وزن (کیلوگرم) <i aria-hidden="true">*</i></span><input type="number" name="weight" step="0.1" inputmode="decimal" dir="ltr" required id="id_weight"></label>
+
+        <label class="fld"><span>طول (سانتی‌متر) <i aria-hidden="true">*</i></span><input type="number" name="length" value="30" min="0" inputmode="numeric" dir="ltr" required id="id_length"></label>
+
+        <label class="fld"><span>عرض (سانتی‌متر) <i aria-hidden="true">*</i></span><input type="number" name="width" value="20" min="0" inputmode="numeric" dir="ltr" required id="id_width"></label>
+
+        <label class="fld"><span>ارتفاع (سانتی‌متر) <i aria-hidden="true">*</i></span><input type="number" name="height" value="20" min="0" inputmode="numeric" dir="ltr" required id="id_height"></label>
+
+      </div>
+      <label class="fld"><span>محتویات</span><input type="text" name="contents" maxlength="120" placeholder="مثلاً: لباس، قطعات یدکی، اسناد" id="id_contents"></label>
+
+    </fieldset>
+    <fieldset><legend><span class="num">۲</span> فرستنده</legend>
+      <div class="grid2">
+        <label class="fld"><span>نام فرستنده <i aria-hidden="true">*</i></span><input type="text" name="sender_name" maxlength="80" required id="id_sender_name"></label>
+
+        <label class="fld"><span>تلفن فرستنده <i aria-hidden="true">*</i></span><input type="text" name="sender_phone" maxlength="15" inputmode="numeric" dir="ltr" required id="id_sender_phone"></label>
+
+        <label class="fld span2"><span>آدرس جمع‌آوری <i aria-hidden="true">*</i></span><textarea name="pickup_address" cols="40" rows="2" maxlength="250" required id="id_pickup_address">
+</textarea></label>
+
+      </div>
+    </fieldset>
+    <fieldset><legend><span class="num">۳</span> گیرنده</legend>
+      <div class="grid2">
+        <label class="fld"><span>نام گیرنده <i aria-hidden="true">*</i></span><input type="text" name="receiver_name" maxlength="80" required id="id_receiver_name"></label>
+
+        <label class="fld"><span>تلفن گیرنده <i aria-hidden="true">*</i></span><input type="text" name="receiver_phone" maxlength="15" inputmode="numeric" dir="ltr" required id="id_receiver_phone"></label>
+
+        <label class="fld span2"><span>آدرس تحویل <i aria-hidden="true">*</i></span><textarea name="delivery_address" cols="40" rows="2" maxlength="250" required id="id_delivery_address">
+</textarea></label>
+
+      </div>
+    </fieldset>
+    <div class="ship-foot">
+      <p class="muted">هزینه‌ی نهایی هنگام ثبت روی سرور محاسبه و در رسید نمایش داده می‌شود. پرداخت هنگام جمع‌آوری بار انجام می‌شود.</p>
+      <button class="btn btn-amber" type="submit">ثبت و دریافت کد رهگیری</button>
+    </div>
+  </form>
+</section>
+</main>
+<footer class="foot">
+  <div class="road" aria-hidden="true"></div>
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">رهسپار</p>
+      <p class="muted">از ۱۳۸۹ در جاده‌های ایران. دفتر مرکزی: تهران، خیابان شهید بهشتی، کوچه‌ی نهم، پلاک ۲۲</p>
+    </div>
+    <div>
+      <p class="foot-h">دسترسی سریع</p>
+      <ul class="foot-links">
+        <li><a href="../track/index.html">رهگیری مرسوله</a></li>
+        <li><a href="../calculator/index.html">محاسبه‌ی هزینه‌ی ارسال</a></li>
+        <li><a href="index.html">ثبت درخواست ارسال</a></li>
+        <li><a href="../coverage/index.html">شهرهای تحت پوشش</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-h">پشتیبانی ۲۴ ساعته</p>
+      <p class="foot-phone" dir="ltr">۰۲۱-۹۱۰۰ ۴۴۷۰</p>
+      <p class="muted">شنبه تا پنجشنبه ۸ تا ۲۰ · جمعه‌ها فقط رهگیری</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© ۱۴۰۵ رهسپار. همه‌ی حقوق محفوظ است.</span>
+    <a href="../../index.html">طراحی و توسعه: مهدی صادقی</a>
+  </div>
+</footer>
+<script src="/logistics/static/freight/site.js" defer></script>
+
+<script src="/assets/demo.js" defer></script></body>
+</html>

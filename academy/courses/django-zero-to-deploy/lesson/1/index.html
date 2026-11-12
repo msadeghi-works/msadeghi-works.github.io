@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نصب پایتون و ساخت محیط مجازی — جنگو از صفر تا استقرار</title>
+<meta name="description" content="داناکد؛ آکادمی آنلاین آموزش برنامه‌نویسی وب، طراحی رابط کاربری و تحلیل داده با پروژه‌های واقعی.">
+<link rel="preload" href="../../../../static/fonts/vazirmatn.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../../static/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e4572e'/%3E%3Cpath d='M12 10l-5 6 5 6M20 10l5 6-5 6' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body class="">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.8a3.5 3.5 0 010 6.4M18.5 14.8c1.6.8 2.6 2.5 3 5.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-design" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.4 0 2-1 1.5-2.2-.6-1.4.3-2.8 1.8-2.8H18a3 3 0 003-3c0-5.5-4-10-9-10z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="7.5" cy="11" r="1.4" fill="currentColor"/><circle cx="11" cy="7" r="1.4" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-data" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2"/><circle cx="6.5" cy="6.5" r=".8" fill="currentColor"/><circle cx="9" cy="6.5" r=".8" fill="currentColor"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 10l3 2.5L7 15M12.5 15H17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v15H6.5A2.5 2.5 0 004 20.5zM4 20.5A2.5 2.5 0 006.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1-4.2 4.2-6.5 8-6.5s7 2.3 8 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2.5 10h19M6 15h4" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 00-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+<a class="skip" href="index.html#main">رفتن به محتوای اصلی</a>
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="logo" href="../../../../index.html" aria-label="داناکد — صفحه اصلی">
+      <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#1c1a17"/><path d="M15 13l-6 7 6 7" stroke="#e4572e" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 13l6 7-6 7" stroke="#f6f2ea" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="2.6" fill="#f2b33d"/></svg>
+      <span class="logo-text">دانا<b>کد</b></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="منو"><svg width="26" height="26"><use href="#i-menu"/></svg></button>
+    <nav id="nav" class="nav" aria-label="منوی اصلی">
+      <a href="../../../index.html" >همهٔ دوره‌ها</a>
+      <a href="/academy/courses/?price=free">دوره‌های رایگان</a>
+      <a href="../../../../index.html#teachers">مدرسان</a>
+      <a href="../../../../index.html#how">چطور کار می‌کند</a>
+      <span class="nav-sep"></span>
+      
+        <a href="/academy/login/">ورود</a>
+        <a class="btn btn-accent btn-sm" href="/academy/signup/">ثبت‌نام رایگان</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="lesson-top"><div class="wrap lt-in">
+  <a href="../3/index.html" class="back"><svg width="18" height="18"><use href="#i-arrow-r"/></svg> جنگو از صفر تا استقرار</a>
+  
+</div></div>
+<div class="wrap lesson-layout">
+  <div class="lesson-main">
+    <div class="player" role="img" aria-label="پیش‌نمایش ویدیوی جلسه">
+      <img src="../../../../static/img/poster.jpg" alt="" width="1280" height="720">
+      <button class="play-btn" type="button" data-demo-play aria-label="پخش ویدیو"><svg width="34" height="34"><use href="#i-play"/></svg></button>
+      <div class="player-bar"><span>۰۰:۰۰</span><div class="pb-track"><span></span></div><span>۰۹:۰۰</span></div>
+      <p class="player-note" hidden>در نسخهٔ نمایشی، ویدیو بارگذاری نمی‌شود. در نسخهٔ واقعی این بخش به سرویس استریم امن (مثل آروان) وصل می‌شود.</p>
+    </div>
+    <p class="muted small">جلسهٔ ۱ از ۱۲ · شروع کار با جنگو</p>
+    <h1 class="lesson-title">نصب پایتون و ساخت محیط مجازی</h1>
+    <div class="lesson-actions">
+      
+      <a class="btn btn-accent" href="/academy/courses/django-zero-to-deploy/checkout/">ثبت‌نام در دوره برای دسترسی کامل</a>
+      
+    </div>
+    <section class="box notes"><h2><svg width="20" height="20"><use href="#i-book"/></svg> یادداشت‌های جلسه</h2><p>در جلسهٔ «نصب پایتون و ساخت محیط مجازی» از فصل «شروع کار با جنگو»، مفهوم اصلی را اول با یک مثال ساده توضیح می‌دهیم و بعد آن را روی پروژهٔ دوره «جنگو از صفر تا استقرار» پیاده می‌کنیم.</p>
+
+<p>نکات کلیدی این جلسه:<br>• قبل از شروع، کد جلسهٔ قبل را از مخزن دوره دریافت کنید تا هم‌قدم جلو برویم.<br>• هر جا ویدیو را متوقف کردید، همان قدم را خودتان تکرار کنید؛ یادگیری با تایپ کردن اتفاق می‌افتد، نه با تماشا.<br>• اشتباه‌های رایج این بخش در انتهای ویدیو مرور شده‌اند.</p>
+
+<p>تمرین: نسخهٔ خودتان را بسازید و لینک آن را در گروه دوره بفرستید تا منتور بازخورد بدهد.</p></section>
+    <nav class="pager" aria-label="جلسات قبلی و بعدی">
+      <span></span>
+      <a class="pg pg-next" href="../2/index.html"><small>جلسهٔ بعد</small><span>ساختار پروژه و اپ‌ها</span></a>
+    </nav>
+  </div>
+  <aside class="lesson-side" aria-label="فهرست جلسات">
+    <h2 class="h-sm">فهرست جلسات</h2>
+    
+    <div class="side-ch"><p class="side-ch-title">شروع کار با جنگو</p>
+      <ol>
+        <li class="current ">
+          <a href="index.html" aria-current="page"><svg width="16" height="16"><use href="#i-play"/></svg>نصب پایتون و ساخت محیط مجازی</a>
+          
+        </li>
+        <li class=" ">
+          <a href="../2/index.html" ><svg width="16" height="16"><use href="#i-play"/></svg>ساختار پروژه و اپ‌ها</a>
+          
+        </li>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>اولین ویو و تمپلیت</span>
+        </li></ol>
+    </div>
+    
+    <div class="side-ch"><p class="side-ch-title">مدل‌ها و پایگاه داده</p>
+      <ol>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>طراحی مدل‌های فروشگاه</span>
+        </li>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>مایگریشن و ORM</span>
+        </li>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>پنل ادمین سفارشی</span>
+        </li></ol>
+    </div>
+    
+    <div class="side-ch"><p class="side-ch-title">کاربران و سبد خرید</p>
+      <ol>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>ثبت‌نام و ورود</span>
+        </li>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>سبد خرید با سشن</span>
+        </li>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>پرداخت و ثبت سفارش</span>
+        </li></ol>
+    </div>
+    
+    <div class="side-ch"><p class="side-ch-title">تست و استقرار</p>
+      <ol>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>نوشتن تست برای ویوها</span>
+        </li>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>گونیکورن و انجین‌ایکس</span>
+        </li>
+        <li class=" ">
+          <span class="locked"><svg width="16" height="16"><use href="#i-lock"/></svg>دامنه، SSL و بک‌آپ</span>
+        </li></ol>
+    </div>
+    
+  </aside>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="logo logo-light" href="../../../../index.html"><span class="logo-text">دانا<b>کد</b></span></a>
+      <p class="muted-light">از اولین خط کد تا اولین قرارداد کاری؛ دوره‌های پروژه‌محور با پشتیبانی واقعی منتور.</p>
+    </div>
+    <div>
+      <h3>دسترسی سریع</h3>
+      <ul><li><a href="../../../index.html">دوره‌ها</a></li><li><a href="/academy/courses/?price=off">دوره‌های تخفیف‌دار</a></li><li><a href="/academy/dashboard/">داشبورد دانشجو</a></li></ul>
+    </div>
+    <div>
+      <h3>تماس با ما</h3>
+      <ul class="contact">
+        <li><svg width="18" height="18"><use href="#i-phone"/></svg><span dir="ltr">۰۲۱-۹۱۰۰۴۲۷۰</span></li>
+        <li><svg width="18" height="18"><use href="#i-pin"/></svg>تهران، خیابان کریمخان، کوچه سوم، پلاک ۱۸</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© ۱۴۰۵ آکادمی داناکد — همهٔ حقوق محفوظ است.</span>
+    <a href="../../../../../index.html">طراحی و توسعه: مهدی صادقی</a>
+  </div>
+</footer>
+<script src="../../../../static/js/site.js" defer></script>
+<script src="/assets/demo.js" defer></script></body>
+</html>

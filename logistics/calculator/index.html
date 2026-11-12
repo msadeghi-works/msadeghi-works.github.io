@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محاسبه‌ی هزینه‌ی ارسال | رهسپار</title>
+<meta name="description" content="رهسپار؛ ارسال بار و بسته به ۱۹ شهر ایران با محاسبه‌ی آنلاین هزینه و رهگیری لحظه‌ای مرسوله.">
+<meta name="theme-color" content="#0f1b2d">
+<link rel="preload" href="../static/freight/fonts/vazirmatn.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/logistics/static/freight/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1b2d'/%3E%3Cpath d='M9 24 17 8h4l-8 16z' fill='%23f5a524'/%3E%3C/svg%3E">
+</head>
+<body class="">
+<a class="skip" href="index.html#main">رفتن به محتوای اصلی</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="../index.html" aria-label="رهسپار، صفحه‌ی اصلی">
+      <svg viewBox="0 0 44 44" width="40" height="40" aria-hidden="true"><rect width="44" height="44" rx="10" fill="#f5a524"/><path d="M12 34 22 10h6L18 34z" fill="#0f1b2d"/><path d="M27 22h6M25 28h8" stroke="#0f1b2d" stroke-width="3" stroke-linecap="round"/></svg>
+      <span class="logo-t"><b>رهسپار</b><small>حمل‌ونقل و پست اکسپرس</small></span>
+    </a>
+    <button class="nav-btn" type="button" aria-expanded="false" aria-controls="nav"><svg class="ic " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+<span class="sr">منو</span></button>
+    <nav id="nav" class="nav" aria-label="منوی اصلی">
+      
+      <a href="../services/index.html" >خدمات</a>
+      <a href="../coverage/index.html" >شبکه‌ی پوشش</a>
+      <a href="index.html" aria-current="page">محاسبه‌ی هزینه</a>
+      <a href="../track/index.html" >رهگیری</a>
+      <a href="../contact/index.html" >قرارداد سازمانی</a>
+      
+      <a class="btn btn-amber nav-cta" href="../ship/index.html">ثبت ارسال</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead"><div class="wrap"><p class="kicker">ماشین‌حساب</p><h1>هزینه‌ی ارسال را دقیق بدانید</h1><p class="lead">قیمت روی سرور و با همان فرمولی محاسبه می‌شود که هنگام ثبت ارسال استفاده می‌کنیم؛ عددی که می‌بینید همان عددی است که می‌پردازید.</p></div><div class="road" aria-hidden="true"></div></section>
+
+<section class="sec">
+  <div class="wrap calc">
+    <form id="calc" class="panel" data-api="/logistics/api/quote/" data-ship="/logistics/ship/" novalidate>
+      <input type="hidden" name="csrfmiddlewaretoken" value="ivl48jaSrw1AhALXixcD0ptKl8jTOrgg5qfpCfTgEy6vMLZv32gGtS2zgJfp1FhF">
+      <fieldset class="svc-pick"><legend>نوع سرویس</legend>
+        <label class="pick"><input type="radio" name="service" value="1" checked><span><svg class="ic " viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8M7.5 5.5l9 5"/></svg>
+<b>پست اکسپرس</b><small>تا ۳۰ کیلو</small></span></label><label class="pick"><input type="radio" name="service" value="2" ><span><svg class="ic " viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+<b>اکسپرس ویژه</b><small>تا ۱۰ کیلو</small></span></label><label class="pick"><input type="radio" name="service" value="3" ><span><svg class="ic " viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h8v8H3zM13 13h8v8h-8zM8 3h8v8H8z"/></svg>
+<b>بار خرده (گروپاژ)</b><small>تا ۳٬۰۰۰ کیلو</small></span></label><label class="pick"><input type="radio" name="service" value="4" ><span><svg class="ic " viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h4l4 3v3h-8z"/><circle cx="5.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>
+<b>بار کامل (دربستی)</b><small>تا ۲۴٬۰۰۰ کیلو</small></span></label>
+      </fieldset>
+      <div class="grid2">
+        <label class="fld"><span>شهر مبدأ</span><select name="origin" required><option value="1" selected>تهران</option><option value="2" >کرج</option><option value="3" >قم</option><option value="4" >اصفهان</option><option value="5" >یزد</option><option value="6" >رشت</option><option value="7" >ساری</option><option value="8" >گرگان</option><option value="9" >مشهد</option><option value="10" >کرمان</option><option value="11" >زاهدان</option><option value="12" >تبریز</option><option value="13" >ارومیه</option><option value="14" >کرمانشاه</option><option value="15" >همدان</option><option value="16" >شیراز</option><option value="17" >اهواز</option><option value="18" >بوشهر</option><option value="19" >بندرعباس</option></select></label>
+        <label class="fld"><span>شهر مقصد</span><select name="destination" required><option value="1" >تهران</option><option value="2" >کرج</option><option value="3" >قم</option><option value="4" >اصفهان</option><option value="5" >یزد</option><option value="6" >رشت</option><option value="7" >ساری</option><option value="8" >گرگان</option><option value="9" selected>مشهد</option><option value="10" >کرمان</option><option value="11" >زاهدان</option><option value="12" >تبریز</option><option value="13" >ارومیه</option><option value="14" >کرمانشاه</option><option value="15" >همدان</option><option value="16" >شیراز</option><option value="17" >اهواز</option><option value="18" >بوشهر</option><option value="19" >بندرعباس</option></select></label>
+      </div>
+      <div class="grid4">
+        <label class="fld"><span>وزن (کیلوگرم)</span><input name="weight" inputmode="decimal" value="۲" required></label>
+        <label class="fld"><span>طول (سانتی‌متر)</span><input name="length" inputmode="numeric" value="۳۰" required></label>
+        <label class="fld"><span>عرض (سانتی‌متر)</span><input name="width" inputmode="numeric" value="۲۰" required></label>
+        <label class="fld"><span>ارتفاع (سانتی‌متر)</span><input name="height" inputmode="numeric" value="۲۰" required></label>
+      </div>
+      <button class="btn btn-amber wide" type="submit"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18.5h8"/></svg>
+ محاسبه‌ی هزینه</button>
+    </form>
+    <aside class="receipt" id="receipt" aria-live="polite">
+      <div class="receipt-empty"><p class="muted">مشخصات بار را وارد کنید و «محاسبه» را بزنید.</p></div>
+      <div class="receipt-body" hidden>
+        <p class="r-route"><span data-k="from"></span> <svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+ <span data-k="to"></span></p>
+        <p class="r-total"><b data-k="total"></b> <span>تومان</span></p>
+        <p class="r-eta"><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+ تحویل <span data-k="eta"></span></p>
+        <dl class="r-lines">
+          <div><dt>سرویس</dt><dd data-k="service"></dd></div>
+          <div><dt>مسافت جاده‌ای تقریبی</dt><dd><span data-k="distance_km"></span> کیلومتر</dd></div>
+          <div><dt>وزن حجمی</dt><dd><span data-k="volumetric_weight"></span> کیلو</dd></div>
+          <div><dt>وزن قابل‌محاسبه</dt><dd><span data-k="chargeable_weight"></span> کیلو</dd></div>
+          <div><dt>هزینه‌ی پایه</dt><dd data-k="base_fee"></dd></div>
+          <div><dt>هزینه‌ی وزن</dt><dd data-k="weight_cost"></dd></div>
+          <div><dt>هزینه‌ی مسافت</dt><dd data-k="distance_cost"></dd></div>
+        </dl>
+        <a class="btn btn-ink wide" id="go-ship" href="../ship/index.html">ثبت ارسال با همین مشخصات</a>
+      </div>
+      <p class="receipt-err" hidden></p>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="road" aria-hidden="true"></div>
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">رهسپار</p>
+      <p class="muted">از ۱۳۸۹ در جاده‌های ایران. دفتر مرکزی: تهران، خیابان شهید بهشتی، کوچه‌ی نهم، پلاک ۲۲</p>
+    </div>
+    <div>
+      <p class="foot-h">دسترسی سریع</p>
+      <ul class="foot-links">
+        <li><a href="../track/index.html">رهگیری مرسوله</a></li>
+        <li><a href="index.html">محاسبه‌ی هزینه‌ی ارسال</a></li>
+        <li><a href="../ship/index.html">ثبت درخواست ارسال</a></li>
+        <li><a href="../coverage/index.html">شهرهای تحت پوشش</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-h">پشتیبانی ۲۴ ساعته</p>
+      <p class="foot-phone" dir="ltr">۰۲۱-۹۱۰۰ ۴۴۷۰</p>
+      <p class="muted">شنبه تا پنجشنبه ۸ تا ۲۰ · جمعه‌ها فقط رهگیری</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© ۱۴۰۵ رهسپار. همه‌ی حقوق محفوظ است.</span>
+    <a href="../../index.html">طراحی و توسعه: مهدی صادقی</a>
+  </div>
+</footer>
+<script src="/logistics/static/freight/site.js" defer></script>
+
+<script src="/assets/demo.js" defer></script></body>
+</html>
