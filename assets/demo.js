@@ -26,6 +26,7 @@
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]');
     if (!a) return;
+    if (a.hasAttribute('data-noop')) { e.preventDefault(); return; } /* placeholder social links of the fictional businesses */
     var h = a.getAttribute('href') || '';
     if (BLOCK.test(h)) { e.preventDefault(); e.stopImmediatePropagation(); toast(); }
   }, true);
